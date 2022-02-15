@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: service-auth
+  #redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+   # password: 123456
+    timeout: 1000
+    jedis:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 8
+        # 连接池中的最大空闲连接
+        max-idle: 500
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 2000
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+  aop:
+    proxy-target-class: true
+  cache:
+    type:
+      redis
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 9098
+
+#security:
+#  oauth2:
+#    resource:
+#      user-info-uri: http://localhost:9098/users/current
+#    client:
+#      id: client_2
+#      client-secret: 123456
+#      access-token-uri: http://localhost:9098/oauth/token
+#      grant-type: client_credentials,password
+#      scope: server
