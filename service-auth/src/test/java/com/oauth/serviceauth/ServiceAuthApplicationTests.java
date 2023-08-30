@@ -9,14 +9,16 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class ServiceAuthApplicationTests {
 
-    @Autowired
+    @Resource
     private RedisTemplate<String,String> redisTemplate;
 
-    @Autowired
+    @Resource
     RedisConnectionFactory redisConnectionFactory;
     @Test
     public void testRedis() {

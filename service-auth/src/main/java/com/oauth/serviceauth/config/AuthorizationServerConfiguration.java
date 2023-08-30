@@ -13,10 +13,14 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 
+import javax.annotation.Resource;
+
 /**
  * @author:GSHG
  * @date: 2021-11-09 6:21 PM
  * description: 用于配置授权服务器端点的安全过滤拦截
+ *
+ * 类中3个不同的configure方法分别
  */
 @Configuration
 @EnableAuthorizationServer
@@ -30,7 +34,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     /**
      *     将令牌信息村粗到redis中
      */
-    @Autowired
+    @Resource
     RedisConnectionFactory redisConnectionFactory;
 
     /**

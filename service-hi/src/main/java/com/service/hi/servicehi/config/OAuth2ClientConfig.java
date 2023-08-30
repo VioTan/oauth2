@@ -14,9 +14,12 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 /**
  * @author:GSHG
  * @date: 2021-12-10 5:31 PM
- * description:
+ * description: OAuth2 client用来访问被OAuth2保护的资源，service-hi作为OAuth2 Client
  */
 
+/**
+ * 注解EnableOAuth2Client开启了OAuth2 Client功能，注入一个OAuth2RestTemplate 类型的Bean用于向service-auth服务请求。
+ */
 @EnableOAuth2Client
 @EnableConfigurationProperties
 @Configuration
